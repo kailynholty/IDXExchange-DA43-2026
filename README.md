@@ -1,1 +1,1 @@
-# IDXExchange-DA43-2026
+# IDX Exchange - Data Analyst Internship (Summer 2026)
