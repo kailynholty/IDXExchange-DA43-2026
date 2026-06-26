@@ -17,3 +17,4 @@ csv_file = 'CRMLSListing202601.csv'
 ```
 ## Week 1
 Load and concatenate monthly CSV data from January 2024 to May 2026 into two master tables: ```listings.csv``` and ```sold.csv```. Filter for Residential property types only.
+### Running the Script
