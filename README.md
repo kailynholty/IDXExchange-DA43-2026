@@ -25,5 +25,5 @@ Load and concatenate monthly CSV data from January 2024 to May 2026 into two mas
 ### Running the Script
 Place the script in the same directory as the monthly CRMLS files. 
 
-The script will locate all ```CRMLS.listing*.csv``` and ```CRMLS.sold.csv``` files. Then, it will load each CSV file into a pandas Dataframe to concatenate monthly files into either listings or sold. Both datasets will then be filtered for ```PropertyType == "Residential"```. Cleaned datasets will be saved as ```listings.csv``` and ```sold.csv```.
+The script will locate all ```CRMLS.listing*.csv``` and ```CRMLS.sold*.csv``` files. Then, it will load each CSV file into a pandas Dataframe to concatenate monthly files into either listings or sold. Both datasets will then be filtered for ```PropertyType == "Residential"```. Cleaned datasets will be saved as ```listings.csv``` and ```sold.csv```.
 ## Week 2
