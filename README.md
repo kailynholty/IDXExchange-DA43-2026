@@ -35,3 +35,8 @@ Listings before Residential filter: XXX,XXX
 Listings after Residential filter: XXX,XXX
 ```
 ## Week 2
+Filter data for only relevant residential property records by analyzing missing column values and review key numeric fields for statistical relevance.
+### Running the Script
+
+### Key Findings
+** Dataset Size **
