@@ -39,4 +39,14 @@ Filter data for only relevant residential property records by analyzing missing 
 ### Running the Script
 
 ### Key Findings
-** Dataset Size **
+**Dataset Size**
+- Listings: 572,122 rows x 84 columns
+- Sold: 491,086 rows x 84 columns
+
+**Missing Values**
+- Listings: 13 columns with >90% missing values, 71 columns with at least one missing value
+- Sold: 15 columns with >90% missing values, 73 columns with at least one missing value
+
+**Numeric Field EDA Analysis**
+- Close Price: $823,000 median and $1,185,313 mean from sold data
+- Days On Market: 18 days median and 36.9 days mean from sold data
