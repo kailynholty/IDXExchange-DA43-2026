@@ -55,5 +55,4 @@ Filter data for only relevant residential property records by analyzing missing 
 ### Running the Script
 
 ### Key Findings
-- Zero null mortgage rates for sold data
-- 386,565 null mortgage rates for listing data
+- Zero null mortgage rates for sold data and listing data
