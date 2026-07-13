@@ -51,3 +51,9 @@ Filter data for only relevant residential property records by analyzing missing 
 - Close Price: $823,000 median and $1,185,313 mean from sold data
 - Days On Market: 18 days median and 36.9 days mean from sold data
 - Counties with Highest Median Prices: Del Norte, San Mateo, Santa Clara, San Francisco, Santa Cruz
+## Week 3
+### Running the Script
+
+### Key Findings
+- Zero null mortgage rates for sold data
+- 386,565 null mortgage rates for listing data
