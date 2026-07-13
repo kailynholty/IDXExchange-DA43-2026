@@ -16,8 +16,8 @@ mortgage_monthly = (mortgage.groupby("year_month")["rate_30yr_fixed"].mean().res
 sold_cleaned["CloseDate"] = pd.to_datetime(sold_cleaned["CloseDate"])
 sold_cleaned["year_month"] = sold_cleaned["CloseDate"].dt.to_period("M")
 
-listings_cleaned["CloseDate"] = pd.to_datetime(listings_cleaned["CloseDate"])
-listings_cleaned["year_month"] = listings_cleaned["CloseDate"].dt.to_period("M")
+listings_cleaned["ListingContractDate"] = pd.to_datetime(listings_cleaned["ListingContractDate"])
+listings_cleaned["year_month"] = listings_cleaned["ListingContractDate"].dt.to_period("M")
 
 #Merges mortgage column to the sold and listings datasets
 sold_with_rates = sold_cleaned.merge(mortgage_monthly, on = "year_month", how = "left")
