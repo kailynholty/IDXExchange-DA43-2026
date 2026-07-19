@@ -34,8 +34,8 @@ Listings after concatenation: XXX,XXX
 Listings before Residential filter: XXX,XXX
 Listings after Residential filter: XXX,XXX
 ```
-## Week 2
-Filter data for only relevant residential property records by analyzing missing column values and review key numeric fields for statistical relevance.
+## Weeks 2 and 3
+Filter data for only relevant residential property records by analyzing missing column values and review key numeric fields for statistical relevance. Enriches dataset by merging FRED, the national 30-year fixed mortgage rate, with the combined sold and listings datasets.
 ### Running the Script
 
 ### Key Findings
@@ -51,8 +51,17 @@ Filter data for only relevant residential property records by analyzing missing 
 - Close Price: $823,000 median and $1,185,313 mean from sold data
 - Days On Market: 18 days median and 36.9 days mean from sold data
 - Counties with Highest Median Prices: Del Norte, San Mateo, Santa Clara, San Francisco, Santa Cruz
-## Week 3
+
+**FRED MORTGAGE30US**
+- 30-year fixed mortgage rate from the St. Louis Federal Reserve
+- Resampled weekly data into monthly average before merging datasets using a ```year_month``` key
+- Zero null mortgage rates for sold data and listing data, confirming a complete join of datasets
+
+## Weeks 4 and 5
+Prepares datasets for reliable analysis by fixing formating inconsistencies, performing date consistency checks, handling missing or redundant information, and doing geographic data checks.
 ### Running the Script
 
 ### Key Findings
-- Zero null mortgage rates for sold data and listing data
+**Invalid Numeric Values**
+- Sold: 1 entry where ```ClosePrice``` <= 0, 166 entries where ```LivingArea``` <= 0, 67 entries where ```DaysOnMarket``` < 0, and 0 entries where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
+- Listings: 0 entries where ```ClosePrice``` <= 0, 384 entries where ```LivingArea``` <= 0, 31 entries where ```DaysOnMarket``` < 0, and 0 entres where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
