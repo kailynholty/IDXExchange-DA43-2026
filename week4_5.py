@@ -126,6 +126,6 @@ listings_with_rates["implausible_coordinates_flag"] = (
 print("Listings Out-of-State Coordinates: " + str(listings_with_rates["implausible_coordinates_flag"].sum()))
 
 
-# #save CSV files
-# sold_with_rates.to_csv("sold_week4_5.csv", index = False)
-# listings_with_rates.to_csv("listings_week4_5.csv", index = False)
+#save CSV files
+sold_with_rates.to_csv("sold_week4_5.csv", index = False)
+listings_with_rates.to_csv("listings_week4_5.csv", index = False)
