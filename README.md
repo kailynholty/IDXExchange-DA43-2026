@@ -65,3 +65,27 @@ Prepares datasets for reliable analysis by fixing formating inconsistencies, per
 **Invalid Numeric Values**
 - Sold: 1 entry where ```ClosePrice``` <= 0, 166 entries where ```LivingArea``` <= 0, 67 entries where ```DaysOnMarket``` < 0, and 0 entries where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
 - Listings: 0 entries where ```ClosePrice``` <= 0, 384 entries where ```LivingArea``` <= 0, 31 entries where ```DaysOnMarket``` < 0, and 0 entres where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
+
+## Week 6
+
+## Week 7
+### Running the Script
+
+### Key Findings
+**Outliers**
+- Sold: ```ClosePrice``` = 17,066, ```LivingArea``` = 10,041, ```DaysOnMarket``` = 17,455
+- Listings: ```ClosePrice``` = 11,857, ```LivingArea``` = 28,286, ```DaysOnMarket``` = 55,392
+
+**Rows Before and After Filtering**
+- Sold: before = 226,304, after = 190,409
+- Listings: before = 572,122, after = 484,728
+
+**Sold Median Values Before and After Filtering**
+- ```ClosePrice```: before = 825,000, after = 790,000
+- ```LivingArea```: before = 1,640, after = 1,566
+- ```DaysOnMarket```: before = 17, after = 14
+
+**Listings Median Values Before and After Filtering**
+- ```ClosePrice```: before = 851,000, after = 825,000
+- ```LivingArea```: before = 1,670, after = 1,610
+- ```DaysOnMarket```: before = 11, after = 10
