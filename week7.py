@@ -21,6 +21,12 @@ lower, upper = iqr_bounds(listings, "ClosePrice")
 print("Close Price Listings lower bound: ", lower)
 print("Close Price Listings upper bound: ", upper)
 
+# Close Price Sold lower bound:  -516250.0
+# Close Price Sold upper bound:  2397750.0
+# Close Price Listings lower bound:  -525000.0
+# Close Price Listings upper bound:  2475000.0
+
+
 lower, upper = iqr_bounds(sold, "LivingArea")
 print("Living Area Sold lower bound: ", lower)
 print("Living Area Sold upper bound: ", upper)
@@ -29,6 +35,12 @@ lower, upper = iqr_bounds(listings, "LivingArea")
 print("Living Area Listings lower bound: ", lower)
 print("Living Area Listings upper bound: ", upper)
 
+# Living Area Sold lower bound:  -209.0
+# Living Area Sold upper bound:  3671.0
+# Living Area Listings lower bound:  -330.0
+# Living Area Listings upper bound:  3878.0
+
+
 lower, upper = iqr_bounds(sold, "DaysOnMarket")
 print("Days On Market Sold lower bound: ", lower)
 print("Days On Market Sold upper bound: ", upper)
@@ -36,6 +48,11 @@ print("Days On Market Sold upper bound: ", upper)
 lower, upper = iqr_bounds(listings, "DaysOnMarket")
 print("Days On Market Listings lower bound: ", lower)
 print("Days On Market Listings upper bound: ", upper)
+
+# Days On Market Sold lower bound:  -50.0
+# Days On Market Sold upper bound:  102.0
+# Days On Market Listings lower bound:  -22.0
+# Days On Market Listings upper bound:  50.0
 
 
 #create an outlier flag column
@@ -55,9 +72,18 @@ print("Close Price Sold outliers: " + str(sold["ClosePrice_sold_outlier_flag"].s
 print("Living Area Sold outliers: " + str(sold["LivingArea_sold_outlier_flag"].sum()))
 print("Days On Market Sold outliers: " + str(sold["DaysOnMarket_sold_outlier_flag"].sum()))
 
+# Close Price Sold outliers: 17066
+# Living Area Sold outliers: 10041
+# Days On Market Sold outliers: 17455
+
 print("Close Price Listings outliers: " + str(listings["ClosePrice_listings_outlier_flag"].sum()))
 print("Living Area Listings outliers: " + str(listings["LivingArea_listings_outlier_flag"].sum()))
 print("Days On Market Listings outliers: " + str(listings["DaysOnMarket_listings_outlier_flag"].sum()))
+
+# Close Price Listings outliers: 11857
+# Living Area Listings outliers: 28286
+# Days On Market Listings outliers: 55392
+
 
 #save flagged csv file
 sold.to_csv("sold_flagged_outliers.csv", index = False)
@@ -76,17 +102,37 @@ listings_clean = listings[(listings["ClosePrice_listings_outlier_flag"] == False
 print("Sold Rows before filtering: " + str(len(sold)))
 print("Sold Rows after filtering: " + str(len(sold_clean)))
 
+# Sold Rows before filtering: 226304
+# Sold Rows after filtering: 190409
+
 print("Listings Rows before filtering: " + str(len(listings)))
 print("Listings Rows after filtering: " + str(len(listings_clean)))
+
+# Listings Rows before filtering: 572122
+# Listings Rows after filtering: 484728
 
 #compare median values before and after filtering
 for column in ["ClosePrice", "LivingArea", "DaysOnMarket"]:
     print(column, "before:", sold[column].median())
     print(column, "after:", sold_clean[column].median())
 
+# ClosePrice before: 825000.0
+# ClosePrice after: 790000.0
+# LivingArea before: 1640.0
+# LivingArea after: 1566.0
+# DaysOnMarket before: 17.0
+# DaysOnMarket after: 14.0
+
 for column in ["ClosePrice", "LivingArea", "DaysOnMarket"]:
     print(column, "before:", listings[column].median())
     print(column, "after:", listings_clean[column].median())
+
+# ClosePrice before: 851000.0
+# ClosePrice after: 825000.0
+# LivingArea before: 1670.0
+# LivingArea after: 1610.0
+# DaysOnMarket before: 11.0
+# DaysOnMarket after: 10.0
 
 #save cleaned and filtered dataset
 sold_clean.to_csv("sold_filtered_outliers.csv", index = False)
