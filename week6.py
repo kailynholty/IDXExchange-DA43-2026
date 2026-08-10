@@ -52,8 +52,16 @@ listings_school = gpd.sjoin(listings_geo, schools[["DistrictName", "geometry"]],
 sold["DistrictName"] = sold_school["DistrictName"].values
 listings["DistrictName"] = listings_school["DistrictName"].values
 
+print("Sold unified school districts found:", sold["DistrictName"].nunique())
+print("Listings unified school districts found:", listings["DistrictName"].nunique())
+
 print("Sold properties with district assigned:", sold["DistrictName"].notna().sum())
 print("Listing properties with district assigned:", listings["DistrictName"].notna().sum())
+
+# Sold unified school districts found: 325
+# Listings unified school districts found: 337
+# Sold properties with district assigned: 170085
+# Listing properties with district assigned: 379274
 
 #segment analysis
 property_summary = (sold.groupby("PropertyType").agg({
