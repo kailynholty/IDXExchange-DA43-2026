@@ -67,6 +67,13 @@ Prepares datasets for reliable analysis by fixing formating inconsistencies, per
 - Listings: 0 entries where ```ClosePrice``` <= 0, 384 entries where ```LivingArea``` <= 0, 31 entries where ```DaysOnMarket``` < 0, and 0 entres where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
 
 ## Week 6
+### Running the Script
+
+### Key Findings
+- Sold unified school districts found: 325
+- Listings unified school districts found: 337
+- Sold properties with district assigned: 170085
+- Listing properties with district assigned: 379274
 
 ## Week 7
 ### Running the Script
