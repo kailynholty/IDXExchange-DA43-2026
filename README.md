@@ -37,6 +37,9 @@ Listings after Residential filter: XXX,XXX
 ## Weeks 2 and 3
 Filter data for only relevant residential property records by analyzing missing column values and review key numeric fields for statistical relevance. Enriches dataset by merging FRED, the national 30-year fixed mortgage rate, with the combined sold and listings datasets.
 ### Running the Script
+The script will print the dataset size, including row and column count, column data types, and the first couple rows of the datasets. Then it will calculate missing counts and percentages per column, flagging and dropping columns with >90% missing values. The script will produce a numeric distribution summary (min, max, mean, median, percentiles) for ```ClosePrice```, ```LivingArea```, and ```DaysOnMarket```.
+
+The script will then merge FRED mortgage rate data onto both combined datasets using a ```year_month``` key.
 
 ### Key Findings
 **Dataset Size**
@@ -58,16 +61,19 @@ Filter data for only relevant residential property records by analyzing missing 
 - Zero null mortgage rates for sold data and listing data, confirming a complete join of datasets
 
 ## Weeks 4 and 5
-Prepares datasets for reliable analysis by fixing formating inconsistencies, performing date consistency checks, handling missing or redundant information, and doing geographic data checks.
+Prepares datasets for reliable analysis by fixing formatting inconsistencies, performing date consistency checks, handling missing or redundant information, and doing geographic data checks.
 ### Running the Script
+The script converts date fields to date time format, removes duplicate columns, and flags invalid numeric values. The script also performs date consistency checks, flagging errors, and performs geographic data checks that flags missing coordinates, null values, and implausible coordinates.
 
 ### Key Findings
 **Invalid Numeric Values**
 - Sold: 1 entry where ```ClosePrice``` <= 0, 166 entries where ```LivingArea``` <= 0, 67 entries where ```DaysOnMarket``` < 0, and 0 entries where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
-- Listings: 0 entries where ```ClosePrice``` <= 0, 384 entries where ```LivingArea``` <= 0, 31 entries where ```DaysOnMarket``` < 0, and 0 entres where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
+- Listings: 0 entries where ```ClosePrice``` <= 0, 384 entries where ```LivingArea``` <= 0, 31 entries where ```DaysOnMarket``` < 0, and 0 entries where ```BedroomsTotal``` and ```BathroomsTotalInteger``` are negative
 
 ## Week 6
+Engineer key market indicators to prepare for Tableau dashboards.
 ### Running the Script
+Creates the following key metrics: ```PriceRatio```, ```PricePerSqFt```, ```DaysOnMarketMetric```, ```YrMo```, ```CloseOriginalListRatio```, ```ListingContractDays```, and ```ContractCloseDays```. The script additionally adds school district information and segment analysis.
 
 ### Key Findings
 - Sold unified school districts found: 325
@@ -76,7 +82,9 @@ Prepares datasets for reliable analysis by fixing formating inconsistencies, per
 - Listing properties with district assigned: 379274
 
 ## Week 7
+Filters key numeric fields for outliers and removes extreme values.
 ### Running the Script
+Uses the Interquartile Range method to remove records that fall out of a defined statistical range. Saves a csv file with flagged outliers and removed outliers.
 
 ### Key Findings
 **Outliers**
